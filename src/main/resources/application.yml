@@ -1,0 +1,32 @@
+server:
+  port: 8073
+
+camel:
+  springboot:
+    main-run-controller: true
+    routes-include-pattern: file:${custom.root-dir}/yaml-code/*.yaml
+    routes-reload-enabled: true
+    routes-reload-directory: file:${custom.root-dir}/yaml-code
+    routes-reload-pattern: "*.yaml"
+  component:
+    kafka:
+      brokers: 192.168.162.129:9092
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+  rest:
+#    port: 9999
+#    context-path: api
+    binding-mode: json
+
+spring:
+  elasticsearch:
+    uris: 192.168.162.129:9200
+  kafka:
+    bootstrap-servers: 192.168.162.129:9092
+
+custom:
+  root-dir: C:\Users\USER\IdeaProjects\camel-kafka-log
+
+logging:
+  file:
+    path: C:/A/logs

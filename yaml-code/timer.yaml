@@ -1,0 +1,20 @@
+- from:
+    uri: timer:timer1?period=300
+    steps:
+      - log: "Timer1 start"
+      - to:
+          uri: rest:get:product?host=localhost:8073
+
+- from:
+    uri: timer:timer2?period=800
+    steps:
+      - log: "Timer2 start"
+      - to:
+          uri: rest:get:cart?host=localhost:8073
+
+- from:
+    uri: timer:timer3?period=1200
+    steps:
+      - log: "Timer3 start"
+      - to:
+          uri: rest:get:order?host=localhost:8073

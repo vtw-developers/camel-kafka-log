@@ -1,0 +1,17 @@
+- rest:
+    get:
+      - path: /product
+        to:
+          uri: direct:product
+
+- rest:
+    get:
+      - path: /cart
+        to:
+          uri: direct:cart
+
+- rest:
+    get:
+      - path: /order
+        to:
+          uri: direct:order
