@@ -4,9 +4,9 @@ server:
 camel:
   springboot:
     main-run-controller: true
-    routes-include-pattern: file:${custom.root-dir}/yaml-code/*.yaml
+    routes-include-pattern: file:${custom.root-dir}/camel-routes/*.yaml
     routes-reload-enabled: true
-    routes-reload-directory: file:${custom.root-dir}/yaml-code
+    routes-reload-directory: file:${custom.root-dir}/camel-routes
     routes-reload-pattern: "*.yaml"
   component:
     kafka:
@@ -19,14 +19,10 @@ camel:
     binding-mode: json
 
 spring:
+  application:
+    name: CarInspect
   elasticsearch:
     uris: 192.168.162.129:9200
-  kafka:
-    bootstrap-servers: 192.168.162.129:9092
 
 custom:
   root-dir: C:\Users\USER\IdeaProjects\camel-kafka-log
-
-logging:
-  file:
-    path: C:/A/logs

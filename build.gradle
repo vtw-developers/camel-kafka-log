@@ -26,7 +26,6 @@ dependencies {
     implementation 'org.apache.camel:camel-endpointdsl'
     implementation 'org.apache.camel:camel-yaml-dsl'
     implementation 'org.apache.camel:camel-debug'
-    implementation 'org.springframework.kafka:spring-kafka'
     implementation 'org.apache.camel.springboot:camel-kafka-starter'
     implementation 'org.apache.camel.springboot:camel-elasticsearch-starter'
     implementation 'org.apache.camel.springboot:camel-jackson-starter'
@@ -34,6 +33,7 @@ dependencies {
     implementation 'org.apache.camel.springboot:camel-platform-http-starter'
     implementation 'org.apache.camel.springboot:camel-http-starter'
     implementation 'org.apache.camel.springboot:camel-opentelemetry-starter'
+    implementation 'org.springframework.kafka:spring-kafka'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

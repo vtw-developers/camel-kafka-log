@@ -23,7 +23,7 @@ public class RestTest extends EndpointRouteBuilder {
                 .to(direct("a").getUri());
 
 
-        from(direct("a")).log("bbbbbbbbbbbbbbbbbbb")
+        from(direct("a"))
 //                .transform().constant(Map.of("id", "11", "name", "br"))
                 .process(exchange -> {
                     String httpMethod = exchange.getIn().getHeader("CamelHttpMethod", String.class);
@@ -41,7 +41,7 @@ public class RestTest extends EndpointRouteBuilder {
                 })
             .to(kafka("TestTopic"))
 //                .onCompletion().marshal().json()
-            .log("전송완료2. ${body}, Type: ${body.getClass}");
+            .log("전송완료. ${body}, Type: ${body.getClass}");
 
 
         from(kafka("TestTopic"))

@@ -1,0 +1,38 @@
+- from:
+    uri: direct:product
+    steps:
+      - onCompletion:
+          steps:
+            - process:
+                ref: requestLogProcessor
+            - to:
+                uri: kafka:{{spring.application.name}}
+      - process:
+          ref: SelectProduct
+      - log: "kafka 전송완료. ${body}, Type: ${body.getClass}"
+
+- from:
+    uri: direct:cart
+    steps:
+      - onCompletion:
+          steps:
+            - process:
+                ref: requestLogProcessor
+            - to:
+                uri: kafka:{{spring.application.name}}
+      - process:
+          ref: SelectCart
+      - log: "kafka 전송완료. ${body}, Type: ${body.getClass}"
+
+- from:
+    uri: direct:order
+    steps:
+      - onCompletion:
+          steps:
+            - process:
+                ref: requestLogProcessor
+            - to:
+                uri: kafka:{{spring.application.name}}
+      - process:
+          ref: OrderService
+      - log: "kafka 전송완료. ${body}, Type: ${body.getClass}"

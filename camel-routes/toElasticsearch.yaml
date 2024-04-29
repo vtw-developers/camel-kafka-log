@@ -1,0 +1,7 @@
+- from:
+    uri: kafka:{{spring.application.name}}?groupId=log-group&consumersCount=20&maxPollRecords=10
+    steps:
+      - log: "Received message from Kafka"
+      - to:
+          uri: elasticsearch://elastic?operation=Index&indexName=log
+      - log: "elasticsearch 전송완료. body: ${body}, Type: ${body.getClass}"
