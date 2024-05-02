@@ -8,8 +8,8 @@ import java.time.Instant;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-@Component("requestLogProcessor")
-public class requestLogProcessor implements Processor {
+@Component("RequestLogProcessor")
+public class RequestLogProcessor implements Processor {
     @Override
     public void process(Exchange exchange) throws Exception {
         String httpMethod = exchange.getIn().getHeader("CamelHttpMethod", String.class);

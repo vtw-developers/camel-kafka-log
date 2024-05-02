@@ -4,7 +4,7 @@
       - onCompletion:
           steps:
             - process:
-                ref: requestLogProcessor
+                ref: RequestLogProcessor
             - to:
                 uri: kafka:{{spring.application.name}}
       - process:
@@ -17,7 +17,7 @@
       - onCompletion:
           steps:
             - process:
-                ref: requestLogProcessor
+                ref: RequestLogProcessor
             - to:
                 uri: kafka:{{spring.application.name}}
       - process:
@@ -30,7 +30,7 @@
       - onCompletion:
           steps:
             - process:
-                ref: requestLogProcessor
+                ref: RequestLogProcessor
             - to:
                 uri: kafka:{{spring.application.name}}
       - process:
